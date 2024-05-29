@@ -139,24 +139,26 @@ while True:
     elif choice == 4:
         rows_A = int(input("Digite o número de linhas da primeira matriz: "))
         cols_A = int(input("Digite o número de colunas da primeira matriz: "))
+        A = create_matrix(rows_A, cols_A)
+
         rows_B = int(input("Digite o número de linhas da segunda matriz: "))
         cols_B = int(input("Digite o número de colunas da segunda matriz: "))
+        B = create_matrix(rows_B, cols_B)
 
         if cols_A != rows_B:
             print("O número de colunas da primeira matriz deve ser igual ao número de linhas da segunda matriz.")
             continue
 
-        A = create_matrix(rows_A, cols_A)
-        B = create_matrix(rows_B, cols_B)
-
-        print("Digite os elementos da primeira matriz:")
-        print(f"A = {format_matrix(A)}")
-        print("Digite os elementos da segunda matriz:")
-        print(f"B = {format_matrix(B)}")
-
         result = multiply_matrices(A, B)
-        print("O resultado é:")
-        print(f"Resultado =\n{format_matrix(result)}")
+
+        print("O resultado da multiplicação é a matriz abaixo.\n")
+
+        for inner_list in result:
+            print("\n")
+            for item in inner_list:
+                print(str(item) + ' ', end=' ')
+
+        print("\n")
 
     elif choice == 5:
         rows = int(input("Digite o número de linhas da matriz: "))
