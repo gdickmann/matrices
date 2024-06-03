@@ -164,20 +164,26 @@ while True:
         rows = int(input("Digite o número de linhas da matriz: "))
         cols = int(input("Digite o número de colunas da matriz: "))
         A = create_matrix(rows, cols)
-        print("Digite os elementos da matriz:")
-        print(f"A = {format_matrix(A)}")
+
         result = transpose_matrix(A)
-        print("O resultado é:")
-        print(f"Resultado =\n{format_matrix(result)}")
+
+        print("O resultado da transposição é a matriz abaixo.\n")
+
+        for inner_list in result:
+            print("\n")
+            for item in inner_list:
+                print(str(item) + ' ', end=' ')
+
+        print('\n')
 
     elif choice == 6:
         rows = int(input("Digite o número de linhas da matriz: "))
         cols = int(input("Digite o número de colunas da matriz: "))
         A = create_matrix(rows, cols)
-        print("Digite os elementos da matriz:")
-        print(f"A = {format_matrix(A)}")
+
         det = determinant_matrix(A)
-        print(f"O determinante é: {det}")
+
+        print(f"\nO determinante é: {str(det)[:3]}")
 
     elif choice == 7:
         break
